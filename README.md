@@ -1,10 +1,10 @@
-# 📡 Telecom X — Análisis de Evasión de Clientes (Churn)
+# Telecom X — Análisis de Evasión de Clientes (Churn)
 
 Análisis exploratorio de datos (EDA) sobre la evasión de clientes de Telecom X, orientado a identificar los factores que impulsan la cancelación del servicio y a sentar las bases para modelos predictivos de retención.
 
 ---
 
-## 📋 Descripción del Proyecto
+## Descripción del Proyecto
 
 Telecom X enfrenta una tasa de evasión de aproximadamente el **26-27%** de su base de clientes. Este notebook realiza un proceso completo de ETL y EDA para entender el comportamiento de los clientes y detectar los segmentos de mayor riesgo.
 
@@ -12,7 +12,7 @@ Los resultados de este análisis están diseñados para apoyar al equipo de Data
 
 ---
 
-## 🗂️ Estructura del Repositorio
+## Estructura del Repositorio
 
 ```
 ├── TelecomX_Churn_Analysis.ipynb   # Notebook principal con el análisis completo
@@ -22,35 +22,35 @@ Los resultados de este análisis están diseñados para apoyar al equipo de Data
 
 ---
 
-## 🔄 Flujo del Análisis
+## Flujo del Análisis
 
-### 1. 📥 Extracción de Datos
+### 1. Extracción de Datos
 Carga del dataset desde un archivo JSON con estructura anidada, aplanado a un DataFrame tabular mediante `pd.json_normalize`.
 
-### 2. 🔍 Exploración Inicial y Limpieza
+### 2. Exploración Inicial y Limpieza
 - Revisión de tipos de datos y valores nulos
 - Detección y eliminación de duplicados
 - Corrección de `Charges_Total` (originalmente en formato string)
 - Validación de valores únicos en columnas críticas como `Churn`
 
-### 3. 🔧 Transformación y Estandarización
+### 3. Transformación y Estandarización
 - Creación de columna `Cuentas_Diarias` (cargo diario aproximado)
 - Codificación binaria de variables categóricas `Yes/No → 1/0`
 - Renombrado de columnas al español para mayor claridad
 - Creación de columna `Num_Servicios` (cantidad de servicios contratados)
 
-### 4. 📊 Análisis Exploratorio (EDA)
+### 4. Análisis Exploratorio (EDA)
 - Distribución general de la variable objetivo `Evasion`
 - Tasa de evasión por variables categóricas: tipo de contrato, método de pago, servicio de internet, factura digital
 - Tasa de evasión por variables demográficas: género, adulto mayor, pareja, dependientes
 - Distribución de variables numéricas por grupo (histogramas y boxplots)
 - Matriz de correlación y análisis de dispersión
 
-### 5. 📝 Conclusiones e Insights
+### 5. Conclusiones e Insights
 
 ---
 
-## 🔑 Principales Hallazgos
+## Principales Hallazgos
 
 | Factor | Observación |
 |---|---|
@@ -65,7 +65,7 @@ Carga del dataset desde un archivo JSON con estructura anidada, aplanado a un Da
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 - **Python 3.10**
 - **pandas** — manipulación y transformación de datos
@@ -75,12 +75,12 @@ Carga del dataset desde un archivo JSON con estructura anidada, aplanado a un Da
 
 ---
 
-## ⚠️ Nota Técnica
+## Nota Técnica
 
 Durante el proceso de limpieza, la columna `Churn` puede contener valores no reconocidos por el mapa de codificación binaria si el dataset tiene inconsistencias en los datos fuente. El notebook maneja esto eliminando las filas con valores inválidos antes de continuar con el análisis, garantizando que `Evasion` solo contenga los valores `0` (no evadió) y `1` (sí evadió).
 
 ---
 
-## 👤 Autor
+## Autor
 
 Proyecto desarrollado como parte del programa de formación en Data Science.
